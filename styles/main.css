@@ -1,0 +1,746 @@
+/* ========== GLOBAL RESET ========== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    font-family: "Inter", Arial, sans-serif;
+    background-color: #f8fafc;
+    color: #1e293b;
+    height: 100%;
+}
+
+/* ========== LINKS & ICONS ========== */
+a {
+    text-decoration: none;
+    color: inherit;
+    transition: color 0.2s ease, background-color 0.2s ease;
+}
+
+a:hover {
+    color: #2563eb;
+}
+
+/* Lucide Icon Styling - Base size */
+svg {
+    width: 20px;
+    height: 20px;
+    vertical-align: middle;
+    stroke-width: 2; /* General icon stroke */
+}
+
+/* New generic card style for common look on landing page */
+.card {
+    background-color: white;
+    padding: 2rem;
+    border-radius: 0.75rem;
+    box-shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
+    max-width: 850px;
+    width: 100%;
+    margin-bottom: 1.5rem;
+}
+
+/* ========================================================= */
+/* ========== LANDING PAGE STYLES (index.html) ========== */
+/* ========================================================= */
+.landing-page {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 4rem 1.5rem;
+    min-height: 100vh;
+    justify-content: flex-start;
+    width: 100%;
+}
+
+/* Header for the Logo (Aligned Left within the centered block) */
+.landing-page-header {
+    width: 100%;
+    max-width: 850px;
+    text-align: left;
+    margin-bottom: 2rem;
+}
+
+/* Wrapper to ensure content beneath the logo stays centered */
+.landing-content-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    max-width: 850px;
+}
+
+/* Logo Styling for the Index Page (Top-Left, Small) */
+.landing-logo-link {
+    display: inline-block;
+}
+
+.landing-logo-img {
+    max-width: 150px;
+    height: auto;
+    display: block;
+}
+
+.hero-section {
+    max-width: 850px;
+    margin-bottom: 1.5rem;
+    text-align: left;
+}
+
+.hero-section h1 {
+    font-size: 2rem;
+    color: #1e293b;
+    margin-bottom: 0.5rem;
+    font-weight: 700;
+}
+
+.hero-section p {
+    font-size: 1rem;
+    color: #475569;
+    line-height: 1.6;
+}
+
+/* CTA Background */
+.cta-background {
+    background-color: #2563eb;
+    color: white;
+    padding: 3rem 2rem;
+    border-radius: 1rem;
+    text-align: center;
+    margin: 1.5rem 0;
+    width: 100%;
+    max-width: 850px;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+}
+
+.cta-background h2 {
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+    font-weight: 700;
+}
+
+.cta-background p {
+    font-size: 1rem;
+    margin-bottom: 1.5rem;
+    color: #e2e8f0;
+    font-weight: 400;
+}
+
+.cta-background::before {
+    content: none;
+}
+
+.cta-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    background-color: white;
+    color: #2563eb;
+    padding: 0.75rem 1.5rem;
+    border-radius: 0.5rem;
+    font-weight: 600;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    border: none;
+}
+
+.cta-button:hover {
+    background-color: #f1f5f9;
+    transform: scale(1.05);
+    color: #2563eb;
+}
+
+.cta-button svg {
+    width: 16px;
+    height: 16px;
+    stroke-width: 2.5;
+}
+
+/* Developer Info Section */
+.dev-section {
+    text-align: left;
+    padding: 1.5rem 2rem;
+    margin-bottom: 0;
+}
+
+.dev-section h2 {
+    color: #1e293b;
+    margin-bottom: 1rem;
+    font-size: 1.15rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.dev-info-list p {
+    margin-bottom: 0.5rem;
+    color: #475569;
+    font-size: 0.95rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.dev-info-list p:last-child {
+    margin-bottom: 0;
+}
+
+.dev-info-list strong {
+    font-weight: 600;
+}
+
+.dev-info-list a {
+    color: #2563eb;
+    font-weight: 500;
+}
+
+.dev-info-list a:hover {
+    text-decoration: underline;
+}
+
+.dev-section svg {
+    width: 18px;
+    height: 18px;
+    color: #2563eb;
+    min-width: 18px;
+}
+
+/* ========================================================= */
+/* ========== DASHBOARD LAYOUT STYLES (All App Pages) ========== */
+/* ========================================================= */
+
+.app-layout {
+    display: flex;
+    background-color: #f8fafc;
+}
+
+/* Sidebar Styling */
+.new-sidebar {
+    width: 240px;
+    background-color: #ffffff;
+    border-right: 1px solid #e2e8f0;
+    padding: 2.5rem 1.5rem 1.5rem 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    box-shadow: 0 0 10px rgba(0,0,0,0.03);
+    flex-shrink: 0;
+}
+
+/* LOGO STYLES (Sidebar) */
+.new-sidebar .logo-link {
+    display: block;
+    margin-bottom: 2.5rem;
+    text-align: left;
+}
+
+.new-sidebar .logo-img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+.new-sidebar nav {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+    flex-grow: 1;
+}
+
+.new-sidebar nav a {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 0.7rem 1rem;
+    border-radius: 0.5rem;
+    color: #475569;
+    font-weight: 500;
+    transition: background-color 0.2s;
+}
+
+.new-sidebar nav a:hover {
+    background-color: #f1f5f9;
+    color: #2563eb;
+}
+
+.new-sidebar nav a.active {
+    background-color: #2563eb;
+    color: white;
+}
+
+.new-sidebar nav a.active svg {
+    color: white;
+}
+
+.new-sidebar svg {
+    width: 18px;
+    height: 18px;
+    color: #475569;
+}
+
+/* Content Area for Tasks/Events/Dashboard */
+main.content { /* Added main.content to target specific pages */
+    flex: 1;
+    background-color: #f8fafc;
+    padding: 0; /* Removing padding allows the header and kanban to span full width */
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Dashboard Home Content (Only applies to dashboard.html main) */
+main:not(.content) {
+    display: flex;
+    background-color: #f8fafc;
+    padding: 2rem;
+    overflow-y: auto;
+}
+
+/* ========================================================= */
+/* ========== TOP HEADER BAR (Tasks/Events pages) ========== */
+/* ========================================================= */
+
+.app-top-header {
+    background-color: #ffffff;
+    padding: 1rem 2rem;
+    border-bottom: 1px solid #e2e8f0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+    flex-shrink: 0;
+}
+
+/* Header Text (for Tasks/Events pages) */
+.app-top-header h1 {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: #1e293b;
+    flex-shrink: 0;
+}
+
+.search-bar {
+    display: flex;
+    align-items: center;
+    background-color: #f1f5f9;
+    border-radius: 0.5rem;
+    padding: 0.5rem 1rem;
+    flex-grow: 1;
+    max-width: 400px; /* Constrain search bar width */
+}
+
+.search-bar svg {
+    width: 18px;
+    height: 18px;
+    color: #64748b;
+    margin-right: 0.5rem;
+}
+
+.search-bar input {
+    border: none;
+    background: transparent;
+    font-size: 0.95rem;
+    color: #1e293b;
+    width: 100%;
+}
+
+.search-bar input:focus {
+    outline: none;
+}
+
+.header-actions {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    flex-shrink: 0;
+}
+
+.add-item-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.5rem 1rem;
+    font-size: 0.9rem;
+    font-weight: 600;
+}
+
+.header-actions .icon-btn {
+    color: #475569;
+    cursor: pointer;
+    width: 20px;
+    height: 20px;
+}
+
+.profile-avater {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background-color: #2563eb;
+    color: white;
+    font-weight: 600;
+    font-size: 0.9rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+/* ========================================================= */
+/* ========== KANBAN BOARD (Tasks/Events Column Layout) ========== */
+/* ========================================================= */
+
+.kanban-board {
+    display: grid;
+    /* Uses auto-fit to allow fewer columns on smaller screens */
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5rem;
+    padding: 1.5rem 2rem;
+    flex-grow: 1;
+    overflow-x: auto;
+    align-items: flex-start;
+}
+
+/* Corrected typo: kanban-colum to kanban-column */
+.kanban-colum {
+    background-color: #ffffff;
+    border-radius: 0.75rem;
+    box-shadow: 0 1px 3px 0 rgb(0 0 0 / 0.05);
+    min-height: 400px;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Corrected typo: colum-header to kanban-column > .column-header */
+.kanban-colum > .colum-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 1.25rem;
+    /* Uses primary blue for the highlight line */
+    border-bottom: 3px solid #2563eb;
+    border-radius: 0.75rem 0.75rem 0 0;
+    background-color: #ffffff; /* Explicit white background */
+}
+
+.kanban-colum:nth-child(3) > .colum-header {
+    border-bottom-color: transparent; /* Completed column has no blue line */
+}
+
+.colum-header h3 {
+    font-size: 1.05rem;
+    font-weight: 600;
+    color: #1e293b;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.colum-header .count {
+    background-color: #f1f5f9;
+    color: #475569;
+    font-size: 0.8rem;
+    padding: 0.2rem 0.5rem;
+    border-radius: 0.5rem;
+    font-weight: 500;
+}
+
+.colum-header svg {
+    color: #2563eb;
+    cursor: pointer;
+    width: 20px;
+    height: 20px;
+}
+
+.colum-content {
+    padding: 1rem 1.25rem;
+    flex-grow: 1;
+    /* Fixes typo: Removed .colum-connect class and applied styles to .colum-content */
+}
+
+.no-tasks, .no-events {
+    text-align: center;
+    color: #94a3b8;
+    padding: 2rem 0;
+    font-size: 0.95rem;
+}
+
+/* ========================================================= */
+/* ========== MODAL / DIALOG STYLES (Re-integrated) ========== */
+/* ========================================================= */
+
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.4);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.modal-overlay.hidden {
+    display: none;
+}
+
+.modal-box {
+    background-color: white;
+    border-radius: 0.75rem;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+    width: 90%;
+    max-width: 400px;
+    max-height: 80%;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+}
+
+.modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 1.5rem;
+    border-bottom: 1px solid #e2e8f0;
+    flex-shrink: 0;
+}
+
+.modal-header h2 {
+    font-size: 1.15rem;
+    color: #1e293b;
+    font-weight: 600;
+}
+
+.close-btn {
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: #475569;
+}
+
+.modal-content {
+    padding: 1.5rem;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+/* Form Styling within the Modal */
+.modal-content label {
+    font-size: 0.9rem;
+    color: #1e293b;
+    font-weight: 500;
+    margin-bottom: 0.2rem;
+    margin-top: 0.5rem;
+}
+
+.modal-content input, .modal-content textarea {
+    width: 100%;
+    padding: 0.7rem;
+    border: 1px solid #cbd5e1;
+    border-radius: 0.4rem;
+    font-size: 0.95rem;
+    color: #1e293b;
+    box-sizing: border-box;
+    transition: border-color 0.2s;
+}
+
+.modal-content input:focus, .modal-content textarea:focus {
+    border-color: #2563eb;
+    outline: none;
+}
+
+.modal-content textarea {
+    resize: vertical;
+    min-height: 70px;
+}
+
+.modal-content .full-width {
+    width: 100%;
+    margin-top: 1rem;
+}
+
+/* Priority Group Styling */
+.priority-group {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-bottom: 0.75rem;
+}
+
+.priority {
+    padding: 0.5rem 0.75rem;
+    border-radius: 0.4rem;
+    font-size: 0.8rem;
+    font-weight: 600;
+    cursor: pointer;
+    border: 1px solid transparent;
+    transition: background-color 0.2s, border-color 0.2s;
+}
+
+.priority.high {
+    background-color: #fca5a5;
+    color: #b91c1c;
+}
+
+.priority.low {
+    background-color: #fef3c7;
+    color: #b45309;
+}
+
+.priority.normal {
+    background-color: #bfdbfe;
+    color: #1d4ed8;
+}
+
+.priority.critical {
+    background-color: #fecaca;
+    color: #991b1b;
+}
+
+.priority.active {
+    border-color: #1e293b;
+}
+
+/* ========================================================= */
+/* ========== RESPONSIVENESS (Media Queries) ========== */
+/* ========================================================= */
+
+/* Tablet and Smaller Desktops */
+@media (max-width: 1200px) {
+    .kanban-board {
+        /* Allow up to 3 columns, minimum 280px */
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 1rem;
+        padding: 1.5rem 1rem;
+    }
+}
+
+/* Mobile Devices (Sidebar collapse) */
+@media (max-width: 768px) {
+    .app-layout {
+        flex-direction: column;
+    }
+
+    .new-sidebar {
+        width: 100%;
+        height: auto;
+        padding: 1rem 1.5rem;
+        border-right: none;
+        border-bottom: 1px solid #e2e8f0;
+
+        /* Hide navigation links by default for mobile */
+        display: none;
+    }
+
+    /* Example: Use a button or hamburger icon to toggle the sidebar display */
+
+    main.content {
+        /*padding-top: 0;*/
+        /*overflow-y: auto;*/
+        flex: 1;
+        padding: 40px 60px;
+    }
+
+    .app-top-header {
+        flex-wrap: wrap;
+        padding: 1rem 1rem;
+    }
+
+    .search-bar {
+        order: 3; /* Move search bar to the next line */
+        margin-top: 0.5rem;
+        width: 100%;
+        max-width: none;
+    }
+
+    .header-actions {
+        order: 2;
+    }
+
+    /* Dashboard: Stacks action cards vertically */
+    .action-cards-grid {
+        flex-direction: column;
+        max-width: 100%;
+        /*display: flex;*/
+        /*flex-wrap: wrap;*/
+        /*gap: 24px;*/
+
+    }
+    .action-card {
+        min-width: unset;
+        width: 100%;
+        /*flex: 1 1 600px;*/
+    }
+
+    .welcome-section {
+        display: flex;
+        background-color: black;
+    }
+}
+
+/* Extra small mobile devices */
+@media (max-width: 500px) {
+    .app-top-header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .app-top-header h1 {
+        display: none; /* Hide H1 on very small screens to save space */
+    }
+
+    .header-actions {
+        width: 100%;
+        justify-content: space-between;
+    }
+
+    .add-item-btn {
+        flex-grow: 1;
+        justify-content: center;
+    }
+
+    .landing-page {
+        padding: 2rem 1rem;
+    }
+}
+
+/* ========================================================= */
+/* ========== UTILITIES & SCROLLBARS ========== */
+/* ========================================================= */
+.content::-webkit-scrollbar {
+    width: 8px;
+}
+
+.content::-webkit-scrollbar-thumb {
+    background-color: #cbd5e1;
+    border-radius: 10px;
+}
+.full-width {
+    width: 100%;
+    margin-top: 1rem;
+}
+html {
+    scroll-behavior: smooth;
+}
+
+.skip-link {
+    position: absolute;
+    top: -40px;
+    left: 0;
+    background: #005fcc;
+    color: white;
+    padding: 0.5rem;
+    z-index: 100;
+}
+
+.skip-link:focus {
+    top: 0;
+}
